@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroLens AI — Intelligent Data Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        NeuroLens
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#demo">Demo</a>
+        <a href="https://github.com" target="_blank" class="nav-cta">GitHub →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="container">
+      <div class="hero-tag">Open Source · AI-Powered · No-Code</div>
+      <h1 class="hero-title">
+        Your data,<br/>
+        <span class="accent">finally legible.</span>
+      </h1>
+      <p class="hero-sub">
+        Upload any dataset. NeuroLens reads it, visualises it,<br/>
+        and lets you ask questions in plain language.
+      </p>
+      <div class="hero-actions">
+        <a href="#demo" class="btn-primary">Try the demo</a>
+        <a href="https://github.com" target="_blank" class="btn-ghost">View on GitHub</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">CSV</span><span class="stat-l">Excel · JSON</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">AI Chat</span><span class="stat-l">Ask anything</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n">ML</span><span class="stat-l">Zero code</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything in one place</h2>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feat-icon">📁</div>
+          <h3>Upload & Parse</h3>
+          <p>Drop in CSV, Excel, or JSON. NeuroLens auto-detects schema, types, and missing values instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feat-icon">📊</div>
+          <h3>Visual Explorer</h3>
+          <p>Interactive histograms, scatter plots, correlation matrices — generated automatically from your columns.</p>
+        </div>
+
+        <div class="feature-card feature-card--accent">
+          <div class="feat-icon">🤖</div>
+          <h3>Chat with Data</h3>
+          <p>Ask "Which month had the highest revenue?" or "Summarise outliers in column B" — in plain English.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feat-icon">📝</div>
+          <h3>Auto Reports</h3>
+          <p>One click generates a full analysis report with statistics, charts, and AI commentary.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feat-icon">🔮</div>
+          <h3>ML Predictions</h3>
+          <p>Select a target column, pick a model, train. No Python required. Export predictions as CSV.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feat-icon">🔒</div>
+          <h3>Runs Locally</h3>
+          <p>Self-host in minutes. Your data never leaves your machine unless you choose to connect an AI API.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-dot">1</div>
+          <div class="step-content">
+            <h3>Upload your dataset</h3>
+            <p>Drag and drop any structured file. Supports up to 16 MB out of the box.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-dot">2</div>
+          <div class="step-content">
+            <h3>Explore automatically</h3>
+            <p>NeuroLens profiles your data — shapes, types, distributions — without writing a single line.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-dot">3</div>
+          <div class="step-content">
+            <h3>Ask, predict, export</h3>
+            <p>Use the AI chat, build an ML model, or export a polished report. All from the browser.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO / UPLOAD -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2 class="section-title">Try it now</h2>
+      <p class="demo-sub">Upload a CSV and see NeuroLens analyse it live via the local API.</p>
+
+      <div class="upload-box" id="uploadBox">
+        <div class="upload-icon">⬆</div>
+        <p>Drop a CSV / Excel / JSON file here</p>
+        <span>or</span>
+        <label class="btn-upload" for="fileInput">Choose file</label>
+        <input type="file" id="fileInput" accept=".csv,.xlsx,.xls,.json" hidden />
+      </div>
+
+      <div class="result-panel" id="resultPanel" style="display:none;">
+        <div class="result-header">
+          <span id="resultFilename"></span>
+          <button class="btn-ghost-sm" id="clearBtn">Clear</button>
+        </div>
+        <div class="result-meta" id="resultMeta"></div>
+        <div class="result-preview" id="resultPreview"></div>
+
+        <div class="chat-section">
+          <h4>Ask about this dataset</h4>
+          <div class="chat-box">
+            <div class="chat-messages" id="chatMessages">
+              <div class="chat-msg ai">Hello! I've loaded your dataset. What would you like to know?</div>
+            </div>
+            <div class="chat-input-row">
+              <input type="text" id="chatInput" placeholder="e.g. What are the top 5 rows by value?" />
+              <button class="btn-send" id="sendBtn">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span class="logo"><span class="logo-icon">⬡</span> NeuroLens AI</span>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="#">Docs</a>
+        <a href="#">License</a>
+      </div>
+      <p class="footer-note">MIT License · Built with Flask & Claude AI</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
